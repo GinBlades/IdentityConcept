@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace IdentityConcept.IdentityServer
+namespace IdentityConcept.Api
 {
     public class Startup
     {
@@ -34,14 +34,7 @@ namespace IdentityConcept.IdentityServer
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseStaticFiles();
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+            app.UseMvc();
         }
     }
 }
